@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.weather{
+  background-color: royalblue;
+  display: flex;
+  justify-content:space-between;
+  flex-grow: 1;
+}
+
+.container1 {
+  background-color:rgb(197, 188, 182);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px 0 0 20px ;
+  min-width: fit-content;
+
+
+  .container1a{
+    display:flex;
+    background-color: ivory;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    line-height: 1.5em;
+
+    .container1a1 {
+
+    }
+    .container1a2 {
+    }
+
+    .sepbar {
+      background-color: lightcoral;
+      width: 2px;
+      height: 50px;
+    }
+  }
+
+
+}
+
+.container2 {
+  background-color: salmon;
+  margin: 50px 20px 0 0 ;
+  height: 50px;
+
+}
+
+.forecast {
+  background-color:sandybrown;
+
+  flex-grow: 5;
+}
+
+

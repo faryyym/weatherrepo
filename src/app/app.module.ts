@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherwidgetComponent } from './weatherwidget/weatherwidget.component';
 import { WeatherComponent } from './weather/weather.component';
-import { TwitterComponent } from './twitter/twitter.component';
 import { ForecastComponent } from './forecast/forecast.component';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { ForecastComponent } from './forecast/forecast.component';
     AppComponent,
     WeatherwidgetComponent,
     WeatherComponent,
-    TwitterComponent,
     ForecastComponent
   ],
   imports: [
