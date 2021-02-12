@@ -1,32 +1,9 @@
 <div class="container">
-  <div class="day">
-    <h2>Mon</h2>
-    <div class="icon"></div>
-    <h2>9°</h2>
-    <p>Raining</p>
-  </div>
-  <div class="day">
-    <h2>Mon</h2>
-    <div class="icon"></div>
-    <h2>9°</h2>
-    <p>Raining</p>
-  </div>
-  <div class="day">
-    <h2>Mon</h2>
-    <div class="icon"></div>
-    <h2>9°</h2>
-    <p>Raining</p>
-  </div>
-  <div class="day">
-    <h2>Mon</h2>
-    <div class="icon"></div>
-    <h2>9°</h2>
-    <p>Raining</p>
-  </div>
-  <div class="day">
-    <h2>Mon</h2>
-    <div class="icon"></div>
-    <h2>9°</h2>
-    <p>Raining</p>
+  <div *ngFor="let item of forecast" class="day">
+    <h2>{{item.dt * 1000 | customDate}}</h2>
+
+    <img src="http://openweathermap.org/img/wn/{{item.weather[0].icon}}.png" alt="">
+    <h2>{{item.main.temp}}°</h2>
+    <p>{{item.weather[0].description | titlecase}}</p>
   </div>
 </div>

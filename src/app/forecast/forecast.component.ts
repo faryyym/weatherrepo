@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-forecast',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forecast.component.scss']
 })
 export class ForecastComponent implements OnInit {
-
+  @Input() forecast: string[]
+  ROOT_IMG_URL: string = 'http://openweathermap.org/img/wn/'
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
