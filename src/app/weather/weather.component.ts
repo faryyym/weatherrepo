@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 
@@ -8,15 +9,21 @@ import { WeatherService } from '../weather.service';
 })
 export class WeatherComponent implements OnInit {
   forecastW: any[] = [];
+  curWeather: any;
 
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    this.getWeather();
+    this.getWeather()
+
+    this.getWeatherForecast()
   }
 
-  getWeather() {
-    this.weatherService.getWeatherService('London').subscribe(data => {
+  getWeatherForecast() {
+    this.weatherService.getWeatherForecastService('Male').subscribe(data => {
+
+      this.curWeather = data;
+      console.log(this.curWeather);
 
       for (let i = 0; i < data.list.length; i++) {
         if (data.list[i].dt_txt.indexOf('09:00:00') > -1) {
@@ -24,11 +31,14 @@ export class WeatherComponent implements OnInit {
           this.forecastW.push(data.list[i])
         }
       }
-
-      console.log(this.forecastW);
-
     })
+  }
 
+  getWeather() {
+    this.weatherService.getWeatherService('Male').subscribe(data => {
+      this.curWeather = data;
+      console.log(this.curWeather);
+    })
   }
 
 

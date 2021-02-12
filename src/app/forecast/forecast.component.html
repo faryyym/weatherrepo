@@ -3,7 +3,7 @@
     <h2>{{item.dt * 1000 | customDate}}</h2>
 
     <img src="http://openweathermap.org/img/wn/{{item.weather[0].icon}}.png" alt="">
-    <h2>{{item.main.temp}}°</h2>
+    <h3>{{item.main.temp}}°</h3>
     <p>{{item.weather[0].description | titlecase}}</p>
   </div>
 </div>

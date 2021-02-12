@@ -8,27 +8,40 @@
   background-color: royalblue;
   display: flex;
   justify-content:space-between;
-  flex-grow: 1;
+  position: fixed;
+  width: 100vw;
 }
 
 .container1 {
   background-color:rgb(197, 188, 182);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-  margin: 50px 0 0 20px ;
-  min-width: fit-content;
+  align-items: center;
+  margin: 5em 0 0 1em ;
+  padding: 1em;
+  min-width: 30vw;
+  min-height: 30vh;
 
+  h2 {
+    text-align: center;
+  }
 
   .container1a{
     display:flex;
-    background-color: ivory;
+    background-color: rgb(214, 214, 66);
     text-align: center;
     justify-content: space-around;
     align-items: center;
-    width: 200px;
     line-height: 1.5em;
+
+    .container1a1 {
+    padding: 0 1em;
+    }
+
+    .container1a2 {
+      padding: 0 1em;
+    }
 
 
     .sepbar {
@@ -43,15 +56,17 @@
 
 .container2 {
   background-color: salmon;
-  margin: 5em 3em 0 0 ;
+  margin: 2em 1em 0 0 ;
   height: 50px;
 
 }
 
 .forecast {
   background-color:sandybrown;
-
-  flex-grow: 5;
+  flex-grow: 2;
+  position: relative;
+  top: 5;
+  z-index: -1;
 }
 
 
