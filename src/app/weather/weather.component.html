@@ -23,16 +23,18 @@
       </div>
 
       <div class="form-container">
-        <form #formvalue [formGroup]="weatherSearchForm" (ngSubmit)="getWeather(weatherSearchForm.value)">
+        <form  [formGroup]="weatherSearchForm" (ngSubmit)="getWeather(weatherSearchForm.value)">
           <div class="form-group">
+            <label *ngIf="!curWeather" for="weatherLocation">Enter City Name</label>
             <input type="text"
                   id="weatherLocation"
                   aria-describedby="weatherLocation"
-                  placeholder="Enter City Name"
+                  placeholder="Search"
                   formControlName="location"
                   >
-                  <button [hidden]="!weatherSearchForm.controls.location.value" type="submit">
-                    SEARCH
+                  <button [hidden]="!weatherSearchForm.controls.location.value"
+                   >
+                    search
                   </button>
           </div>
         </form>

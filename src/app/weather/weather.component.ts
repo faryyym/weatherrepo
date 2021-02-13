@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-weather',
@@ -18,16 +18,23 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     this.weatherSearchForm = this.fb.group({
-      location: ['']
-    });
+      location: ['', [Validators.required]]
+    }
+    )
+
 
   }
 
   getWeather(formValue) {
+    if(!formValue.location) {
+      return
+    }
     this.getWeatherForecast(formValue.location)
     this.weatherService.getWeatherService(formValue.location).subscribe(data => {
       this.curWeather = data;
-      console.log(this.curWeather);
+      this.weatherSearchForm.reset({
+        location: ''
+      });
     })
   }
 
