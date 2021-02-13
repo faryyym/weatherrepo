@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="weather">
-    <div class="container1">
+  <div class="weather" >
+    <div class="container1" >
       <h1 *ngIf="curWeather">{{curWeather?.main?.temp | number: '1.0-0'}}°</h1>
-      <h2>{{curWeather?.weather[0]?.description | titlecase}}</h2>
-      <div class="container1a">
-        <div class="container1a1">
+      <h2></h2>
+      <div class="container1a" *ngIf="curWeather">
+        <div class="container1a1" >
           <p>Humidity</p>
           <p>{{curWeather?.main?.humidity}}%</p>
         </div>
@@ -16,12 +16,20 @@
       </div>
     </div>
     <div class="container2">
-      <h1>France</h1>
+      <h1  (click)="onClick()">France</h1>
     </div>
+
+
+
+
   </div>
 
-  <div class="forecast">
-    <app-forecast [forecast]="forecastW"></app-forecast>
+
+
+
+  <div class="forecast" >
+    <app-forecast [forecast]="forecastWeather"></app-forecast>
   </div>
 
 </div>
+

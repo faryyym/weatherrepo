@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./forecast.component.scss']
 })
 export class ForecastComponent implements OnInit {
-  @Input() forecast: string[]
+  @Input() forecastWeather: string[]
   ROOT_IMG_URL: string = 'http://openweathermap.org/img/wn/'
   constructor() { }
 

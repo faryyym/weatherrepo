@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngFor="let item of forecast" class="day">
+  <div *ngFor="let item of forecastWeather" class="day">
     <h2>{{item.dt * 1000 | customDate}}</h2>
 
     <img src="http://openweathermap.org/img/wn/{{item.weather[0].icon}}.png" alt="">

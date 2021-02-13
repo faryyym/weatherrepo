@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
+import { FormComponent } from './form/form.component';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { cpuUsage } from 'process';
 import { WeatherwidgetComponent } from './weatherwidget/weatherwidget.component';
 
 const routes: Routes = [
-  { path: '', component: WeatherwidgetComponent }
+  { path: '', component: FormComponent },
+  { path: 'result', component: WeatherwidgetComponent },
 ];
 
 @NgModule({
