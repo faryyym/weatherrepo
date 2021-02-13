@@ -1,3 +1,6 @@
+
+@import "../../variables.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,35 +8,40 @@
 }
 
 .weather{
-  background-color: royalblue;
   display: flex;
   justify-content:space-between;
   position: fixed;
   width: 100vw;
+  background: linear-gradient(180deg, rgba(26, 38, 60, 0.1), rgba(45, 74, 105, 0.1));
+
+  background-color: royalblue;
+  box-shadow: 0 1px 20px rgba(33, 56, 124, 0.5);
 }
 
 .container1 {
-  background-color:rgb(197, 188, 182);
+  // background-color:rgb(197, 188, 182);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 5em 0 0 1em ;
+  margin: 5em 1em 0 0;
   padding: 1em;
   min-width: 30vw;
   min-height: 30vh;
 
   h2 {
     text-align: center;
+
   }
 
   .container1a{
     display:flex;
-    background-color: rgb(214, 214, 66);
+    // background-color: rgb(214, 214, 66);
     text-align: center;
     justify-content: space-around;
     align-items: center;
     line-height: 1.5em;
+    margin: 0;
 
     .container1a1 {
     padding: 0 1em;
@@ -48,14 +56,19 @@
       background-color: lightcoral;
       width: 2px;
       height: 50px;
+
     }
   }
 
 }
 
+h1, h2, h3, p , label{
+  color: $text;
+}
+
 .container2 {
-  background-color: salmon;
-  margin: 2em 1em 0 0 ;
+  // background-color: salmon;
+  margin: 2em 0 0 1em ;
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -80,7 +93,7 @@
       width: 80%;
       outline: none;
       text-align: center;
-      margin: 0 0 3px 0;
+      margin: 0 0 1em 0;
       line-height: 2em;
       border-radius: 5px;
       border: none;
@@ -104,16 +117,16 @@
       letter-spacing: 5px;
       outline: 0;
       border-radius: 5px;
-      background-color: orchid;
+      background-color:white;
       border: none;
-      color: #ffffff;
+      color: royalblue;
       cursor: pointer;
       line-height: 2em;
 
-      box-shadow: 0 3px 0 red;
 
       &:active {
         box-shadow: none;
+        transform: scale(0.97);
       }
     }
   }
@@ -122,10 +135,12 @@
 
 
 .forecast {
-  background-color:sandybrown;
+
+  background: linear-gradient(0deg, rgba(26, 38, 60, 0.3), rgba(45, 74, 105, 0.3));
+
+  background-color: royalblue;
   flex-grow: 2;
   position: relative;
-  top: 5;
   z-index: -1;
 }
 

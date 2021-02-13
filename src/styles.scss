@@ -2,6 +2,8 @@
 
 /* Application-wide Styles */
 
+
+
 *,
 *::after,
 *::before {
@@ -15,12 +17,10 @@ p {
 
 
 h1 {
-  color: #369;
   font-family: Lato;
 }
 h2,
 h3 {
-  color: #444;
   font-family: Lato;
   // font-weight: lighter;
 }
@@ -31,15 +31,10 @@ h3 {
 body,
 input[type="text"],
 button {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
+  font-family: Lato;
 }
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Lato;
 }
 
-.selected {
-  background-color: red;
-  color: white;
-}
