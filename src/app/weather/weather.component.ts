@@ -20,7 +20,7 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeatherForecast() {
-    this.weatherService.getWeatherForecastService('Male').subscribe(data => {
+    this.weatherService.getWeatherForecastService('India').subscribe(data => {
 
 
       for (let i = 0; i < data.list.length; i++) {
@@ -33,7 +33,7 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeather() {
-    this.weatherService.getWeatherService('Male').subscribe(data => {
+    this.weatherService.getWeatherService('India').subscribe(data => {
       this.curWeather = data;
       console.log(this.curWeather);
     })
