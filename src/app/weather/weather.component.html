@@ -1,9 +1,10 @@
+
 <div class="container">
   <div class="weather">
     <div class="container1">
       <h1 *ngIf="curWeather">{{curWeather?.main?.temp | number: '1.0-0'}}°</h1>
       <h2>{{curWeather?.weather[0]?.description | titlecase}}</h2>
-      <div class="container1a">
+      <div class="container1a" *ngIf="curWeather">
         <div class="container1a1">
           <p>Humidity</p>
           <p>{{curWeather?.main?.humidity}}%</p>
@@ -16,9 +17,31 @@
       </div>
     </div>
     <div class="container2">
-      <h1>{{curWeather?.name}}, {{curWeather?.sys?.country}}</h1>
+      <div class="header-container">
+        <h2 *ngIf="!curWeather">Weather App</h2>
+        <h1 *ngIf="curWeather">{{curWeather?.name | titlecase}}, {{curWeather?.sys?.country}}</h1>
+      </div>
+
+      <div class="form-container">
+        <form #formvalue [formGroup]="weatherSearchForm" (ngSubmit)="getWeather(weatherSearchForm.value)">
+          <div class="form-group">
+            <input type="text"
+                  id="weatherLocation"
+                  aria-describedby="weatherLocation"
+                  placeholder="Enter City Name"
+                  formControlName="location"
+                  >
+                  <button [hidden]="!weatherSearchForm.controls.location.value" type="submit">
+                    SEARCH
+                  </button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
+
+
 
   <div class="forecast">
     <app-forecast [forecast]="forecastWeather"></app-forecast>
