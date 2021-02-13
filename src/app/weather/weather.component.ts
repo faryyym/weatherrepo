@@ -8,7 +8,7 @@ import { WeatherService } from '../weather.service';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
-  forecastW: any[] = [];
+  forecastWeather: any[] = [];
   curWeather: any;
 
   constructor(private weatherService: WeatherService) { }
@@ -22,13 +22,11 @@ export class WeatherComponent implements OnInit {
   getWeatherForecast() {
     this.weatherService.getWeatherForecastService('Male').subscribe(data => {
 
-      this.curWeather = data;
-      console.log(this.curWeather);
 
       for (let i = 0; i < data.list.length; i++) {
         if (data.list[i].dt_txt.indexOf('09:00:00') > -1) {
           // this.curWeather.push(data.list[i])
-          this.forecastW.push(data.list[i])
+          this.forecastWeather.push(data.list[i])
         }
       }
     })
